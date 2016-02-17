@@ -32,6 +32,8 @@ public class WindowMaster {
         
         Scanner sc = new Scanner(System.in);
         
+        
+        
         System.out.println("Please enter window height:");
         stringHeight = sc.nextLine();
         System.out.println("Please enter window width:");
