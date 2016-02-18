@@ -60,34 +60,6 @@ public class WindowMaster {
         }
     }
 
-    //This section is the code we used to use but it was double the size we required it to be.
-    /*
-    public static float getHeight() {
-
-        String stringHeight = "";
-        float height = 0;
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Please enter window height:");
-        stringHeight = sc.nextLine();
-        height = Float.parseFloat(stringHeight);
-
-        return height;
-    }
-
-    public static float getWidth() {
-        String stringWidth = "";
-        float width = 0;
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Please enter window width in decimal feet: ");
-        stringWidth = sc.nextLine();
-        width = Float.parseFloat(stringWidth);
-
-        return width;
-    }
-    */
-
     public static float getUserInput(String userPrompt) {
         String stringValue = "";
         float value = 0;
