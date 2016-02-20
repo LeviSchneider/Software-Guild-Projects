@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PBD35
+public class PBD35 
 {
 	public static void main(String[] args)
 	{

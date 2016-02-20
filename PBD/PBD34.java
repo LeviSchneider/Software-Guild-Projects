@@ -5,32 +5,42 @@ public class PBD34
 	public static void main(String[] args)
 	{
 		Scanner sc = new Scanner(System.in);
-		String name;
-		int age = 0;
+		String answer;
+		String answer2;
 
-		System.out.print("Your name: ");
-		name = sc.next();
+		System.out.println("Think of something and I'll try to guess it!");
 
-		System.out.print("Your age: ");
-		age = sc.nextInt();
+		System.out.print("Question 1) Does it stay inside or outside or both? ");
+		answer = sc.next();
 
+		System.out.print("Question 2) Is it a living thing?");
+		answer2 = sc.next();
 
-		if(age < 16)
+		if(answer.equals("outside"))
 		{
-			System.out.print("You can't drive, " + name + ".");
+			if(answer2.equals("yes"))
+			{
+				System.out.print("I don't know an eagle donkey lobster");
+			}
+			else
+			{
+				System.out.print("No idea, pizza delivery truck!?");
+			}
 		}
-		else if(age < 18)
+		else if(answer.equals("inside"))
 		{
-			System.out.print("You can drive but you can't vote, " + name + ".");
+			if(answer2.equals("yes"))
+			{
+				System.out.print("Well then... You are thinking about a... Dust mite!");
+			}
+			else
+			{
+				System.out.print("It must be a 3 piece pizza. I'm really hungry.");
+			}
 		}
-		else if(age < 25)
+		else
 		{
-			System.out.print("You can vote but not rent a car. " + name + ".");
+			System.out.print("I have not idea what you are talking about.");
 		}
-		else if(age > 25)
-		{
-			System.out.print("You can do pretty much anything " + name + ".");
-		}
-
 	}
 }
