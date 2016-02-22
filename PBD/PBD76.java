@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
+//This is my Black Jack assignment.
 public class PBD76
 {
 	public static void main(String[] args)
