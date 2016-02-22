@@ -1,0 +1,14 @@
+What is a method signature?
+A)it includes name, number, and type of parameters. It excludes return types and thrown exceptions.
+
+What is scope? How can it affect your code?
+A)Scope is how open a variable is. The size depends where you declare the variable. Now if the variable is declared at the top of a class then all class methods have access to it. On the other hand if you declare in a method then it is restricted to that method.
+
+What are the parts of a method definition? How does this differ from a method signature?
+A)A method has a body, return type, name, and a pair of parentheses. Method signatures are the name, number, and parameters of a method while the entire method includes those and return types an thrown exceptions.
+
+How do you declare parameters for a method?
+A) Parameters are to be declared by value. You use commas to separate included parameters that declare their data type encased with parantheses.
+
+How many parameters can a method have?
+A) up to 255.
