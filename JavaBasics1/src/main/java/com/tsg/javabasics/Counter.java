@@ -14,6 +14,9 @@ import java.util.Scanner;
 public class Counter {
     public static void main(String[] args) {
         System.out.println(to10());
+        System.out.println(toN(3));
+        System.out.println(toN(8));
+        System.out.println(toN(200));
     }
     public static int to10()
     {
