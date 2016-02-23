@@ -40,6 +40,13 @@ public class HeronsFormulaNoFunction
 		A = Math.sqrt( s*(s-a)*(s-b)*(s-c) );
 		System.out.println("A triangle with sides 10,9,11 has an area of " + A );
 		
+		a = 9;
+		b = 9;
+		c = 9;
+		s = (a+b+c) / 2.0;
+		A = Math.sqrt( s*(s-a)*(s-b)*(s-c) );
+		System.out.println("A triangle with sides 9,9,9 has an area of " + A );
+
 		a = 8;
 		b = 15;
 		c = 17;
