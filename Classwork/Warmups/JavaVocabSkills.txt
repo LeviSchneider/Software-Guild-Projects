@@ -1,0 +1,83 @@
+1) What is a variable?
+
+	Values or operations that are contained with an assigned type.
+
+2) What is a variable declaration?
+	
+	When you assign a varialbe type (int, String, etc) to a variable name. All together looking like; int num;
+                 
+3) What is a variable assignment?
+
+	Giving a variable a value.
+
+4) Can I declare and assign a variable on the same line?
+
+	Yes
+
+5) Can a method return more than one value?
+
+	No
+
+6) What return type must be declared for methods that do not return a value?
+
+	Void
+
+7) How are code blocks marked in Java?
+
+	You use curly braces {....} to contain blocks of functioning code.
+
+8) What makes up a method's signature?
+
+	Name, number, and parameters of a method. MyMethod1(String[] args)
+
+9) What is a method parameter?
+
+	A set data type that the method is assigned to deal with.
+
+10) How many parameters can a method have?
+
+	Roughly 255
+
+11) Do all of the parameters for a method have to be of the same type?
+
+	No they can be different types.
+
+12) What does the import keyword do?
+
+	Allows you to use classes in different packages without using the whole package.
+
+13) What is the naming convention for Java classes?
+
+	Java follows camelCase syntax for naming class, interface, method and variable.
+
+14) What is the naming convention for Java variables?
+
+	Should use camelCasing with first word being all lower case letters and the second word starting with an upper case letter.
+
+15) What is the naming convention for Java methods?
+
+	Should use camelCasing as well and make the name a verb.
+
+16) What is a method body?
+
+	It is the method code below the name and parameters encased in curly brackets {...}
+
+17) What is an array?
+
+	It is a list of elements that have a uniform type. They are preceded by there type name with square brackets and naming conventions work the same as variables.
+
+18) When is it better to use a for loop over a while loop?
+
+	It is better to use a for loop with an something like an array where you have a list of items that the loop can cycle through. When you have certain result you are trying to acheive like getting a variable to return a specific value then while loops are best. 
+
+19) What is the difference between a while loop and a do/while loop?
+
+	while loops place their conditions on top of its code. d/while loops place their conditions at the bottom running at least one cycle before deciding whether to repeat.
+
+20) What is a switch statement?
+
+	A switch statement tests a variable against a list of values that are predetermined. The switch statement reads the variable and then directs the code to its ordained case that has the next step of the code.
+
+21) What is scope?
+
+	Scope refers to how accessible a variable is. Variables declared within a method have a small scope having usage restricted to that area.
