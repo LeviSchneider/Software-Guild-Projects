@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PBD145
+public class PBD146
 {
 	public static void main(String[] args)
 	{
