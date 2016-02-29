@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PBD148
+public class PBD149
 {
 	public static void main(String[] args)
 	{
@@ -19,7 +19,7 @@ public class PBD148
 			if(array[i] > largeValue)
 			{
 				largeValue = array[i];
-				largeNumCounter = counter;
+				largeNumCounter = counter -1;
 			}
 		}
 		System.out.print("The largest value is " + largeValue + ".\n");
