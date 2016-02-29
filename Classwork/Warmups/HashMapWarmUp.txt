@@ -1,0 +1,35 @@
+1. HashMap has 24 methods.
+	clear()
+	clone()
+	compute(k, BiFunction<? super K, ? super V, ? extends V> remapping Function)
+	computeIfAbsent(K key, Function<? super K,? extends V> mappingFunction)
+	containsKey(Object key)
+	entrySet()
+	forEach(BiConsumer<? super K,? super V> action)
+	get(Object key)
+	getOrDefault(Object key, V defaultValue)
+	isEmpty()
+	keySet()
+	merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)
+	put(K key, V value)
+	putAll(Map<? extends K,? extends V> m)
+	putIfAbsent(K key, V value)
+	remove(Object key)
+	remove(Object key, Object value)
+	replace(K key, V value)
+	replace(K key, V oldValue, V newValue)
+	replaceAll(BiFunction<? super K,? super V,? extends V> function)
+	size()
+	values()
+
+2. HashMap has 4 constructors.
+	HashMap()
+	HashMap(int initialCapacity)
+	HashMap(int initialCapacity, float loadFactor)
+	HashMap(Map<? extends K,? extends V> m)
+
+3. There are 4 methods that are used for adding things into a HashMap.
+
+4. https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html 
+
+5. Generics allow (classes and interfaces) to become parameters when defining these classes, interfaces, and methods.

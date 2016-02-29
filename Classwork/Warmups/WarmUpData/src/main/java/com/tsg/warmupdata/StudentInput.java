@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsg.schooldata;
+package com.tsg.warmupdata;
 
 /**
  *
  * @author apprentice
  */
-public class Student {
+public class StudentInput {
 
     private String name;
     private String email;
     private boolean alive;
 
-    public Student(String name, String email) {
+    public StudentInput(String name, String email) {
         this.email = name;
         this.name = email;
     }
 
-    public Student() {
+    public StudentInput() {
         this.email = "";
         this.name = "";
     }

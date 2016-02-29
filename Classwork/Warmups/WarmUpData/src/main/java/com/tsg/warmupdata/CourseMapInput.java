@@ -3,36 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsg.schooldata;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+package com.tsg.warmupdata;
 
 /**
  *
  * @author apprentice
  */
-public class Course {
+public class CourseMapInput {
     private String courseName;
     private String courseNumber;
-    private Map<String, Student> studentMap;
-    //private Student[] students;
-    //private int index;
+    private StudentInput[] students;
+    private int index;
 
-    public Course(String courseName, String courseNumber) {
+    public CourseMapInput(String courseName, String courseNumber) {
         this();//<= Calls the default construct.
         //students = new Student[10];
         this.courseName = courseName;
         this.courseNumber = courseNumber;
     }
 
-    public Course() {//<= This is the default construct.
-        //students = new Student[10];
-        studentMap = new HashMap<>();
+    public CourseMapInput() {//<= This is the default construct.
+        students = new StudentInput[10];
         this.courseName = "";
         this.courseNumber = "";
-        //this.index = 0;
+        this.index = 0;
     }
 
     public String getCourseName() {
@@ -51,29 +45,19 @@ public class Course {
         this.courseNumber = courseNumber;
     }
     
-    public void addStudent(Student student){
-//        students[index] = student;
-//        index++;
-        studentMap.put(student.getEmail(), student);
+    public void addStudent(StudentInput student){
+        students[index] = student;
+        index++;
     }
     
     public void printCourseReport()
     {
         System.out.println("Course name: " + courseName);
         System.out.println("Course number: " + courseNumber);
-        
-        Set<String> keys = studentMap.keySet();
-        
-        for(String key : keys)
+        for(int i = 0; i < index; i++)
         {
-            String email = studentMap.get(key).getEmail();
-            String name = studentMap.get(key).getName();
-            System.out.println("Student: " + name + " email" + email);
+            System.out.println("Student: " + students[i].getName() + " email:" + students[i].getEmail());
         }
-//        for(int i = 0; i < index; i++)
-//        {
-//            System.out.println("Student: " + students[i].getName() + " email:" + students[i].getEmail());
-//        }
             
     }
 }
