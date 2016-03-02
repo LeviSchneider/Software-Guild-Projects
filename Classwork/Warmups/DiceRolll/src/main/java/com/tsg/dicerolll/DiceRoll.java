@@ -6,7 +6,10 @@
 package com.tsg.dicerolll;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
+import java.util.Set;
+import java.util.TreeMap;
 
 /**
  *
@@ -20,24 +23,29 @@ public class DiceRoll {
         final int MAX_ROLLS = 50;
         Random rng = new Random();
         HashMap<Integer, Integer> rolls = new HashMap<>();
+        HashMap<String, Integer> indivRolls = new HashMap<>();
 
         for (int i = 0; i < MAX_ROLLS; i++) {
             die1 = rng.nextInt(6) + 1;
             die2 = rng.nextInt(6) + 1;
 
-            int total = die1 + die2;
-
-            Integer prevTotal = rolls.get(total);
+            //Integer prevTotal = rolls.get(total);
+            Integer prevTotal = indivRolls.get(die1 + "-" + die2);
             if (prevTotal == null) {
-                rolls.put(total, 1);
+                //rolls.put(total, 1);
+                indivRolls.put(die1 + "-" + die2, 1);
             } else {
-                rolls.put(total, prevTotal + 1);
+                //rolls.put(total, prevTotal + 1);
+                indivRolls.put(die1 + "-" + die2, prevTotal + 1);
             }
 
         }
-        for (int i = 2; i <= 12; i++) {
-            Integer total = rolls.get(i);
-            System.out.print(i + ": ");
+        Map<String, Integer> indivRollsSort = new TreeMap<String, Integer>(indivRolls);
+        
+        Set<String> keys = indivRollsSort.keySet();
+        for (String key : keys) {
+            Integer total = indivRollsSort.get(key);
+            System.out.print(key + ": ");
             if (total != null) {
                 
                 for (int j = 0; j < total; j++) {
@@ -48,5 +56,6 @@ public class DiceRoll {
             }
             System.out.println();
         }
+        
     }
 }
