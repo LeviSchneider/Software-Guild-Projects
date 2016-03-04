@@ -39,14 +39,8 @@ public class WarmUpFri {
             it.remove();
         }
 
-        Iterator entries = teams.entrySet().iterator();
-        while (entries.hasNext()) {
-            Entry thisEntry = (Entry) entries.next();
-            Object key = thisEntry.getKey();
-            Object value = thisEntry.getValue();
-            System.out.println(thisEntry.getKey());
-            System.out.println(" ");
-            System.out.println(thisEntry.getValue());
+        for (Entry<String, String> entry : teams.entrySet()) {
+            System.out.println(entry);
         }
     }
 }

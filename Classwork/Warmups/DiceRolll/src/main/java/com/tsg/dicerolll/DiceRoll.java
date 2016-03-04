@@ -22,7 +22,6 @@ public class DiceRoll {
         int die2 = 0;
         final int MAX_ROLLS = 50;
         Random rng = new Random();
-        HashMap<Integer, Integer> rolls = new HashMap<>();
         HashMap<String, Integer> indivRolls = new HashMap<>();
 
         for (int i = 0; i < MAX_ROLLS; i++) {
