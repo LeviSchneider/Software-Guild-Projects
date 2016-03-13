@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 import com.tsg.junitexamples.JUnitDrills1;
+import static jdk.nashorn.internal.objects.NativeRegExp.test;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -71,9 +72,13 @@ public class JUnitArrays {
         JUnitDrills1 testing = new JUnitDrills1();
         double value = Math.PI * Math.pow(10, 20);
         int[] result = testing.MakePi(value);
+        boolean fact = true;
         
-        for(int i = 0; i < result.length; i++)
-         
+        if(result[1] == 1)
+        {
+            fact = true;
+        }
+        Assert.assertTrue(fact);
     }
     
     @Test
@@ -163,6 +168,21 @@ public class JUnitArrays {
         
         result = test.RotateLeft(array3);
         if(result == arrayC){fact = true;}
+        else{fact = false;}
+        Assert.assertTrue(fact);
+    }
+    
+    @Test
+    public void reverseOrder()
+    {
+        JUnitDrills1 test = new JUnitDrills1();
+        int[] array1 = {1,2,3};
+        int[] result1 = {3,2,1};
+        
+        boolean fact = false;
+        
+        int[] result = test.Reverse(array1);
+        if(result == result1){fact = true;}
         else{fact = false;}
         Assert.assertTrue(fact);
     }
