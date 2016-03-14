@@ -1,0 +1,11 @@
+1)The '=' operator sets the value of the variable.
+
+2)The '==' operator compares values asking if they are equal.
+
+3)With primitives the operators compare to see if they are exactly vs reference operators that measure values approximately.
+
+4)The equals() method performs like the '==' operator, but the equals method compares the value of these variables and not their location in memory.
+
+5)The equals method can be applied to all types.
+
+6)Yes because it defaults to the parent class that has overridden the method.

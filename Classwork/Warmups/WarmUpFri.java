@@ -18,5 +18,12 @@ public class WarmUpFri
 			String key = entry.getKey();
 			String value = entry.getValue();
 		}
+
+		Iterator it = teams.entrySet().iterator();
+		while(it.hasNext())
+		{
+			HashMap.Entry pair = (HashMap.Entry)it.next();
+			systemf
+		}
 	}
 }
