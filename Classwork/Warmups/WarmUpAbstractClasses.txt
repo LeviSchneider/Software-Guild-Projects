@@ -1,0 +1,19 @@
+What is the charateristic of an abstract class?
+
+-Abstract classes cannot be instantiated, but they can be subclassed. They can obtain a mix of methods declared with or without implementation.
+
+How do they differ from non-abstract base classes?
+
+-Non-abstract base classes can be instantiated.
+
+How do they differ from interfaces?
+
+-With interfaces all fields are automatically public, static, and final, and all methods you can delcare or define as public. Also, you can extend only one class whereas you can create as many interfaces as you want.
+
+Why use an abstract base class over a non-abstract base class?
+
+-You use an abstract class when you want to share code among several similar classes. When you are anticipating alot of overlapping use in methods or fields or require access modify the state of the object. Also, if you want to implement abstract methods.
+
+Why would you use a avstract base class over an interface?
+
+-You use an abstract class when you want to share code among several similar classes. When you are anticipating alot of overlapping use in methods or fields or require access modify the state of the object. Finally, when you want to declare non-static or non-final fields.
