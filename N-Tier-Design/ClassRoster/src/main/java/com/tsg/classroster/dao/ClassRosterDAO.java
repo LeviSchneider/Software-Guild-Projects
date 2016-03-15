@@ -26,10 +26,12 @@ public class ClassRosterDAO {
     private Map<Integer, Student> students = new HashMap<Integer, Student>();
     private static final String ROSTER_FILE = "roster.txt";
     private static final String DELIMITER = "::";
+    private Integer maxStudentID = 0;
     
     public void createStudent(Student student) {    
+        student.setStudentId(maxStudentID);
         students.put(student.getStudentId(), student);
-        
+        maxStudentID++;
     }
 
     public Integer[] getAllStudentIds() {
