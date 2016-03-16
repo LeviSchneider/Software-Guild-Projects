@@ -1,0 +1,32 @@
+How can exceptions be handled in Java?
+
+	Exceptions are placed within try catch statements that runs code and the results of that code are tempered by the exceptions placed within catch(). These exceptions throw out errors to the user if a certain condition isn't met by the code resulting in the restarting of the code.
+
+What does the 'finally' keyword do?
+
+	Finally is used in try catch statements to execute code "always" regardless if an error is thrown because of the code.
+
+What are the different types of exceptions in Java?
+	
+	Checked Exception: (also called compile time exceptions) occur when the code is being compiled.
+
+	Unchecked Exceptions: is an exception that occurs at the time of execution. Also called Runtime Exceptions, these occur because of programming bugs, logic errors, or improper use of API.
+
+Can we treat all types of exceptions the same?
+
+	No Checked Exceptions cannot be ignored at the time of compilation and should be dealt with immediately. On the other hand, Unchecked Exceptions can be ignored at the time of compilation.
+
+Can you make your own types of exceptions? If so, how? If not, why?
+
+	Yes you can create your own exceptions by typing...
+
+	public class MyException extends Exception{
+		//insert specific exception code
+	}
+
+	Then when you are trying to implement it just 
+
+	Catch(MyException e)
+	{
+	
+	}
