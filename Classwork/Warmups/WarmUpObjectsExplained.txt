@@ -1,0 +1,18 @@
+Can an object have more than one type? Explain.
+
+	Yes an object can have more than one type. For example, you 
+	have a manager object that has specific attributes that are 
+	only relevant to it, and you have his assistant who also has
+	specific attributes unique only to that object, but at the 
+	same time both the manager and the assistant are both 
+	employees inheriting all the attributes that come with that.
+    The valet of the same company also inherits the employee 
+    type while having attributes specific to the type driver and
+    so on. These types are connected through a "is-a
+    relationship"
+
+    Other types of relationships that describe the way object
+    types relate to one another include "has-a relationship" which is describing types that are aspects of another specific type like a wheel and a bicycle, or coffee to cup.
+
+    Then you  have types connected through a "uses-a relationship" like a bicycle type uses a tire pump type, or a manager type uses a pen type, etc.
+
