@@ -7,6 +7,8 @@ package com.tsg.stackexample.junit;
 
 import com.tsg.stackexample.ArrayStack;
 import com.tsg.stackexample.StackInterface;
+import com.tsg.stackexample.linkedlist.StackLinkedList;
+import com.tsg.stackexample.linkedlist.StackLinkedListImpl;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,7 +20,7 @@ import static org.junit.Assert.*;
  * @author apprentice
  */
 public class ArrayStackJunit {
-    private StackInterface stack;
+    private StackLinkedList<String> stack;
     private String a, b, c, d, e, f;
     
     public ArrayStackJunit() {
@@ -29,7 +31,7 @@ public class ArrayStackJunit {
     
     @Before
     public void setUp() {
-        stack = new ArrayStack();
+        stack = new StackLinkedListImpl<>();
         
         a = "a";
         b = "b";
