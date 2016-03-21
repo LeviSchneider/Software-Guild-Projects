@@ -35,4 +35,10 @@
 	override the unnecessary bike() method.
 
 5-Dependency Inversion Principle
-	Depend on abstractions, not on concretions. You should be able to separate modules from each other using an abstract layer to bind them together. Spring framework, all modules are provided as separate components which can work together by simply injected dependencies in other module. These modules are so well closed that they can be used in other projects. 
+	Depend on abstractions, not on concretions. You should be 
+	able to separate modules from each other using an abstract 
+	layer to bind them together. Spring framework, all modules 
+	are provided as separate components which can work together 
+	by simply injected dependencies in other module. These 
+	modules are so well closed that they can be used in other 
+	projects. 

@@ -16,7 +16,7 @@ public class StackLinkedListImpl<ItemType> implements StackLinkedList<ItemType> 
 
     private Node first;
     private Node last;
-    private int numItems;
+    private int numItems = 0;
 
     @Override
     public int size() {
