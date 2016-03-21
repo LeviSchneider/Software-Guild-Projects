@@ -1,0 +1,38 @@
+1-Single Responsibility Principle
+	One class should only have one well defined responsiblity
+	This gives you the ability to make changes in the future
+	without worrying about majorly impacting the rest of your 
+	code.
+
+2-Open Closed Principle
+	Software should be open for extension but closed for 
+	modification. It means that if someone wants to change the
+	flow control of in specific conditions in application, all	
+	they need to do is extend the class and override some
+	functionality. People should be able to override operations 
+	given in a way that doesn't harm the overall code.
+	For example: Struts, or springs provide a good way to modify
+	code without changing the underlying logic.
+
+3-Liskov's Substitution Principle
+	Derived types must be completely sunstitutable for their 
+	base types. Classes created by piers should be able to 
+	substituted without failure of the code. For instance, if
+	a fellow developer poorly extended some part of your class 
+	and injected into framework/ application then it should not 
+	break the application or should not throw fatal exceptions.
+
+	If your base class is doing one thing strictly then this 
+	should not be much of a problem.
+
+4-Interface Segregation Principle
+	Clients should not be forced to implement unnecessary 
+	methods which they will not use. For example, if you created
+	an interface for vehicles but you have two methods for
+	bike() and car(), but the only other class for this 
+	interface to interact with is a taxiDriver() then you are 
+	only going to need the car() method but you will have to 
+	override the unnecessary bike() method.
+
+5-Dependency Inversion Principle
+	Depend on abstractions, not on concretions. You should be able to separate modules from each other using an abstract layer to bind them together. Spring framework, all modules are provided as separate components which can work together by simply injected dependencies in other module. These modules are so well closed that they can be used in other projects. 
