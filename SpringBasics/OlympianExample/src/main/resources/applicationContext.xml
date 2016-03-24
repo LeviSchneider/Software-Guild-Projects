@@ -38,10 +38,29 @@
     <property name="country" value="Canada"/>
 </bean>
 
-<bean id="canadaSpeedSkater" class="com.tsg.olympianexample.Olympian">
-    <constructor-arg ref="speedSkating"/>
-    <property name="country" value="Canada"/>
-</bean>
+<bean id="olympicOfficial" class="com.tsg.olympianexample.OlympicOfficial" />
+
+<bean id="simpleTimerAspect" class="com.tsg.olympianexample.SimpleTimerAspect" />
+
+<aop:config>
+    <aop:aspect ref="olympicOfficial">
+        <aop:before 
+            method="inspectEquipment"
+            pointcut="execution(* com.tsg.olympianexample.Event.compete(..))"
+        />
+        <aop:after 
+            method="testForPED"
+            pointcut="execution(* com.tsg.olympianexample.SkiJumpEvent.compete(..))"
+        />
+    </aop:aspect>
+    
+    <aop:aspect ref="simpleTimerAspect">
+        <aop:around 
+            method="timeMethod"
+            pointcut="execution(* com.tsg.olympianexample.SkiJumpEvent.compete(..))"
+        />
+    </aop:aspect>
+</aop:config>
 
 </beans>
 

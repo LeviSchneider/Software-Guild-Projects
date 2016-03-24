@@ -24,7 +24,6 @@ public class App {
         
         
         Event skiJumpEvent = new SkiJumpEvent();
-        
         Olympian olympianSkiJumper = new Olympian(skiJumpEvent);
         olympianSkiJumper.competeInEvent(); 
         

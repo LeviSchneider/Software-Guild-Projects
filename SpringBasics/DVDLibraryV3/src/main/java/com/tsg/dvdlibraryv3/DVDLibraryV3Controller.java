@@ -5,13 +5,10 @@
  */
 package com.tsg.dvdlibraryv3;
 
+import com.swcguild.dvdlibrary.dao.DvdLibraryDao;
 import com.swcguild.dvdlibrary.dto.Dvd;
-import com.tsg.dvdlibraryv3.dao.DVDLibraryVDAO;
 import com.tsg.dvdlibraryv3.ui.ConsoleIO;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,65 +16,59 @@ import java.util.List;
  *
  * @author apprentice
  */
-public class DVDLibraryV3Controller {
+public final class DVDLibraryV3Controller {
 
-    private ConsoleIO con = new ConsoleIO();
-    private DVDLibraryVDAO controllerLibrary = new DVDLibraryVDAO();
+    private final ConsoleIO con = new ConsoleIO();
+    private DvdLibraryDao controllerLibrary;
 
+    public DVDLibraryV3Controller(DvdLibraryDao dao)
+    {
+        controllerLibrary = dao;
+    }
+    
     void run() {
-        try {
-
-            boolean keepAlive = true;
-            int menuSelection = 0;
-            controllerLibrary.loadLibrary();
-
-            while (keepAlive) {
-                printMenu();
-                menuSelection = con.readInt("\nPlease select from the above choices.", 1, 8);
-                switch (menuSelection) {
-
-                    case 1:
-                        con.print("Adding DVD...");
-                        addDVD();
-                        break;
-                    case 2:
-                        con.print("Removing DVD...");
-                        removeDVD();
-                        break;
-                    case 3:
-                        con.print("Listing all DVDs...");
-                        listAllDVDs();
-                        break;
-                    case 4:
-                        con.print("Searching for a DVD...");
-                        searchForDVD();
-                        break;
-                    case 5:
-                        con.print("Editing a DVD...");
-                        editDVD();
-                        break;
-                    case 6:
-                        con.print("Number of DVDs is...");
-                        con.print(Integer.toString(controllerLibrary.getNumberOfDVDs()));
-                        break;
-                    case 7:
-                        con.print("Quitting...");
-                        keepAlive = false;
-                        controllerLibrary.writeLibrary();
-                        break;
-                    default:
-                        con.print("Unknown input");
-                        break;
-                }
+        boolean keepAlive = true;
+        int menuSelection = 0;
+        while (keepAlive) {
+            printMenu();
+            menuSelection = con.readInt("\nPlease select from the above choices.", 1, 8);
+            switch (menuSelection) {
+                
+                case 1:
+                    con.print("Adding DVD...");
+                    addDVD();
+                    break;
+                case 2:
+                    con.print("Removing DVD...");
+                    removeDVD();
+                    break;
+                case 3:
+                    con.print("Listing all DVDs...");
+                    //listAllDVDs();
+                    break;
+                case 4:
+                    con.print("Searching for a DVD...");
+                    searchForDVD();
+                    break;
+                case 5:
+                    con.print("Editing a DVD...");
+                    editDVD();
+                    break;
+                case 6:
+                    con.print("Number of DVDs is...");
+                    //con.print(Integer.toString(controllerLibrary.getNumberOfDVDs()));
+                    break;
+                case 7:
+                    con.print("Quitting...");
+                    keepAlive = false;
+                    //controllerLibrary.writeLibrary();
+                    break;
+                default:
+                    con.print("Unknown input");
+                    break;
             }
-
-            controllerLibrary.writeLibrary();
-            con.print("Thank you for using our product.");
-        } catch (FileNotFoundException e) {
-            con.print("Roster file was not found.");
-        } catch (IOException e) {
-            con.print("Unable to write roster file.");
         }
+        con.print("Thank you for using our product.");
 
     }
 
@@ -120,11 +111,8 @@ public class DVDLibraryV3Controller {
         String note = con.readString("Press enter without typing to finish entering notes.");
 
         Dvd dvd = new Dvd();
-
-        Integer id = controllerLibrary.getHighestIndex() + 1;
-        dvd.setId(id);
         dvd.setTitle(title);
-        dvd.setReleaseDate(LocalDate.parse(testDate));
+        dvd.setReleaseDate(LocalDate.now());
         dvd.setMpaaRating(rating);
         dvd.setDirector(director);
         dvd.setStudio(studio);
@@ -138,7 +126,7 @@ public class DVDLibraryV3Controller {
         con.print("Which DVD do you want to edit?");
         controllerLibrary.getByTitle(con.readString("Please print the title of the movie"));
         Integer id = con.readInt("Please enter the ID of the DVD you wish to edit.");
-        Dvd dvd = controllerLibrary.getDvd(id);
+        Dvd dvd = controllerLibrary.getById(id);
         boolean keepAlive = true;
         while (keepAlive) {
             if (dvd != null) {
@@ -165,7 +153,7 @@ public class DVDLibraryV3Controller {
 
                     case 2:
                         newFieldInfo = con.readString("\nWhat is the new year?");
-                        dvd.setReleaseDate(LocalDate.parse(newFieldInfo));
+                        dvd.setReleaseDate(LocalDate.now());
                         controllerLibrary.add(dvd);
                         con.print("Changes saved.");
                         break;
@@ -225,7 +213,7 @@ public class DVDLibraryV3Controller {
                     alive = false;
                     break;
                 case "2":
-                    viewDVD(controllerLibrary.getByDirector(con.readString("Please print the name of the director")));
+                    //viewDVD(controllerLibrary.getByDirector(con.readString("Please print the name of the director")));
                     alive = false;
                     break;
                 case "3":
@@ -237,11 +225,11 @@ public class DVDLibraryV3Controller {
                     alive = false;
                     break;
                 case "5":
-                    viewDVD(controllerLibrary.findNewestDVD());
+                    //viewDVD(controllerLibrary.findNewestDVD());
                     alive = false;
                     break;
                 case "6":
-                    viewDVD(controllerLibrary.findOldestDVD());
+                    //viewDVD(controllerLibrary.findOldestDVD());
                     alive = false;
                     break;
                 default:
@@ -251,25 +239,25 @@ public class DVDLibraryV3Controller {
         }
     }
 
-    private void listAllDVDs() {
-
-        List<Dvd> newDVDList = controllerLibrary.dvdLibrary;
-
-        for (Dvd dvd : newDVDList) {
-            con.print("****************************");
-            con.print("*Title: \t" + dvd.getTitle());
-            con.print("*Studio: \t" + dvd.getStudio());
-            con.print("*Rating: \t" + dvd.getMpaaRating());
-            con.print("*Director: \t" + dvd.getDirector());
-            con.print("*ID: \t" + dvd.getId());
-            con.print("*Notes: \t" + dvd.getNote());
-            con.print("*Release Date: \t" + dvd.getReleaseDate());
-            con.print("****************************\n");
-        }
-
-        con.readString("Please hit enter to continue.");
-
-    }
+//    private void listAllDVDs() {
+//
+//        //List<Dvd> newDVDList = controllerLibrary.dvdLibrary;
+//
+//        for (Dvd dvd : newDVDList) {
+//            con.print("****************************");
+//            con.print("*Title: \t" + dvd.getTitle());
+//            con.print("*Studio: \t" + dvd.getStudio());
+//            con.print("*Rating: \t" + dvd.getMpaaRating());
+//            con.print("*Director: \t" + dvd.getDirector());
+//            con.print("*ID: \t" + dvd.getId());
+//            con.print("*Notes: \t" + dvd.getNote());
+//            con.print("*Release Date: \t" + dvd.getReleaseDate());
+//            con.print("****************************\n");
+//        }
+//
+//        con.readString("Please hit enter to continue.");
+//
+//    }
 
     private void removeDVD() {
         boolean alive = false;

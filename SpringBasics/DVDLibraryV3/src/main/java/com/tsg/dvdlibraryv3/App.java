@@ -5,13 +5,17 @@
  */
 package com.tsg.dvdlibraryv3;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  *
  * @author apprentice
  */
 public class App {
     public static void main(String[] args) {
-        DVDLibraryV3Controller controller = new DVDLibraryV3Controller();
-        controller.run();
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        DVDLibraryV3Controller control = (DVDLibraryV3Controller)ctx.getBean("superController");
+        control.run();
     }
 }
