@@ -1,0 +1,24 @@
+#TopImage{
+    align-content:left;
+    padding-left:20px;
+}
+#block{
+    width:auto;
+}
+.contain{
+    float:right;
+    position:fixed;
+}
+.bottom-container{
+    background-color: black;
+    color:antiquewhite;
+    border-radius: 5px;
+    padding: 10px;
+    width:100%;
+    position:absolute;
+}
+.header{
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
