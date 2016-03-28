@@ -1,0 +1,36 @@
+1: What is the difference between HTTP POST and HTTP GET?
+    HTTP GET requests data from a specified resource. GET requests can also...
+        be cached
+        remain in browser history
+        be bookmarked
+        be bad when dealing with sensitive data
+        have length restrictions
+        should only be used to retrieve data
+        
+    HTTP POST submits data to a specified resource. POST requests...
+        are never cached
+        do not remain in browser history
+        cannot be bookmarked
+        have no restrictions on data length
+        
+2: Can both methods pass data to the server?
+    Both can pass data to the server.
+    
+3: If so, how is that data passed to the server for each method?
+    You can use angularjs to send information to with the http get and the http post methods.
+
+4/5: Are there any other HTTP methods?
+    
+    HTTP GET: returns the body in the response
+    
+    HTTP DELETE:allows a client to remove a document or webpage from the server.
+    
+    HTTP PUT: allows a client to place a file on the server and is similar to sending a file by FTP.
+    
+    HTTP HEAD: counts the output bytes in the response to se the Content-Length header accurately.
+    
+    HTTP LAST MODIFIED: returns the amount of milliseconds since midnight.
+    
+    HTTP OPTIONS: determines which http methods the server supports and returns an appropriate header.
+    
+    HTTP TRACE: returns the headers sent with the trace request to the client so that they can be used in debugging.
