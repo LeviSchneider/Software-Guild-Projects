@@ -48,10 +48,10 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label  for="edit-rating" class="col-md-4 control-label">Rating</label>
+                    <label  for="edit-ratings" class="col-md-4 control-label">Rating</label>
                     <div class="col-md-8">
-                        <sf:input type="text" class="form-control" id="edit-rating" path="rating" placeholder="Rating"/>
-                        <sf:errors path="rating" cssClass="text-danger"></sf:errors>
+                        <sf:input type="text" class="form-control" id="edit-ratings" path="ratings" placeholder="Ratings"/>
+                        <sf:errors path="ratings" cssClass="text-danger"></sf:errors>
                     </div>
                 </div>
                 <div class="form-group">

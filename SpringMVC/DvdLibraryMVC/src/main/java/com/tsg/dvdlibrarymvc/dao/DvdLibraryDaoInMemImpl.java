@@ -72,7 +72,7 @@ public class DvdLibraryDaoInMemImpl implements DvdLibraryDao{
         directorMatches = (directorCriteria == null || directorCriteria.isEmpty())? truePredicate: (c) -> c.getDirector().equals(directorCriteria);
         studioMatches = (studioCriteria == null || studioCriteria.isEmpty())? truePredicate: (c) -> c.getStudio().equals(studioCriteria);
         releaseDateMatches = (releaseDateCriteria == null || releaseDateCriteria.isEmpty())? truePredicate: (c) -> c.getReleaseDate().equals(releaseDateCriteria);
-        ratingMatches = (ratingCriteria == null || ratingCriteria.isEmpty())? truePredicate:(c) -> c.getRating().equals(ratingCriteria); 
+        ratingMatches = (ratingCriteria == null || ratingCriteria.isEmpty())? truePredicate:(c) -> c.getRatings().equals(ratingCriteria); 
         
         return dvdMap.values().stream()
                 .filter(titleMatches

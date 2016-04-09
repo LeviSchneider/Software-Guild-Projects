@@ -7,7 +7,6 @@ package com.tsg.dvdlibrarymvc;
 
 import com.tsg.dvdlibrarymvc.dao.DvdLibraryDao;
 import com.tsg.dvdlibrarymvc.dto.DVD;
-import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -54,18 +53,16 @@ public class HomeControllerNoAjax {
         String title = req.getParameter("title");
         String director = req.getParameter("director");
         String studio = req.getParameter("studio");
-        String rating = req.getParameter("rating");
+        String ratings = req.getParameter("ratings");
         String notes = req.getParameter("notes");
         String releaseDate = req.getParameter("releaseDate");
         
-        ArrayList<String> noteList = new ArrayList<>();
-        noteList.add(notes);
         DVD dvd = new DVD();
         dvd.setTitle(title);
         dvd.setDirector(director);
         dvd.setStudio(studio);
-        dvd.setRating(rating);
-        dvd.setNotes(noteList);
+        dvd.setRatings(ratings);
+        dvd.setNotes(notes);
         dvd.setReleaseDate(releaseDate);
         
         dao.addDVD(dvd);

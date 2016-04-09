@@ -92,7 +92,7 @@
                         </div>
                         <div class='form-group'>
                             <div class='col-md-offset-4 col-md-8'>
-                                <button type='submit' class='btn btn-default' id='add-button'>Create Contact</button>
+                                <button type='submit' class='btn btn-default' id='add-button'>Add DVD</button>
                             </div>
                         </div>
                     </form>
@@ -146,7 +146,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id='editModal' tabindex='-1' aria-labelledby='editModalLabel' aria-hidden="true">
+        <div class="modal fade" id='editModal' tabindex="-1" aria-labelledby='editModalLabel' aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class='modal-header'>
@@ -197,6 +197,7 @@
                             </div>
                             <div class='form-group'>
                                 <div class='col-md-offset-4 col-md-8'>
+                                    <input type="hidden" id="edit-dvd-id"/> 
                                     <button type='submit' id='edit-button' class='btn btn-default' data-dismiss="modal">Edit DVD</button>
                                     <button type='button' class='btn btn-default' data-dismiss="modal">Cancel</button>
                                 </div>
@@ -208,7 +209,6 @@
         </div>
         <script src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-        <script src="${pageContext.request.contextPath}/js/mockData.js"></script>
         <script src="${pageContext.request.contextPath}/js/contactList.js"></script>
     </body>
 </html>

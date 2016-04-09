@@ -21,4 +21,10 @@ public class HomeController {
     {
         return "home";
     }
+    
+    @RequestMapping(value="/rest", method=RequestMethod.GET)
+    public String displayRestPage()
+    {
+        return "rest";
+    }
 }

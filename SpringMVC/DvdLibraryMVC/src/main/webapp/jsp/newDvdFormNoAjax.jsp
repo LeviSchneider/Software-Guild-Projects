@@ -40,9 +40,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label  for="add-rating" class="col-md-4 control-label">Rating</label>
+                    <label  for="add-ratings" class="col-md-4 control-label">Rating</label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" id="add-rating" name="rating" placeholder="Rating"/>
+                        <input type="text" class="form-control" id="add-ratings" name="ratings" placeholder="Rating"/>
                     </div>
                 </div>
                 <div class="form-group">

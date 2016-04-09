@@ -5,7 +5,6 @@
  */
 package com.tsg.dvdlibrarymvc.dto;
 
-import java.util.ArrayList;
 import java.util.Objects;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -29,8 +28,10 @@ public class DVD {
     private String director;
     @NotEmpty(message="You must supply a value for rating")
     @Length(max=20, message="Rating must be no more than 20 characters in length.")
-    private String rating;
-    private ArrayList<String> notes;
+    private String ratings;
+    @NotEmpty(message="You must supply a value for notes")
+    @Length(max=20, message="Notes must be no more than 20 characters in length.")
+    private String notes;
     private int dvdId;
 
     @Override
@@ -40,7 +41,7 @@ public class DVD {
         hash = 53 * hash + Objects.hashCode(this.title);
         hash = 53 * hash + Objects.hashCode(this.studio);
         hash = 53 * hash + Objects.hashCode(this.director);
-        hash = 53 * hash + Objects.hashCode(this.rating);
+        hash = 53 * hash + Objects.hashCode(this.ratings);
         hash = 53 * hash + Objects.hashCode(this.notes);
         hash = 53 * hash + this.dvdId;
         return hash;
@@ -73,7 +74,7 @@ public class DVD {
         if (!Objects.equals(this.director, other.director)) {
             return false;
         }
-        if (!Objects.equals(this.rating, other.rating)) {
+        if (!Objects.equals(this.ratings, other.ratings)) {
             return false;
         }
         if (!Objects.equals(this.notes, other.notes)) {
@@ -114,19 +115,19 @@ public class DVD {
         this.director = director;
     }
 
-    public String getRating() {
-        return rating;
+    public String getRatings() {
+        return ratings;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
+    public void setRatings(String ratings) {
+        this.ratings = ratings;
     }
 
-    public ArrayList<String> getNotes() {
+    public String getNotes() {
         return notes;
     }
 
-    public void setNotes(ArrayList<String> notes) {
+    public void setNotes(String notes) {
         this.notes = notes;
     }
 

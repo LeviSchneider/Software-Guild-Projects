@@ -52,7 +52,7 @@
                     <a href="${editDvd_url}">Edit</a>
                     Director: ${dvd.director}<br/>
                     Studio: ${dvd.studio}<br/>
-                    Rating: ${dvd.rating}<br/>
+                    Ratings: ${dvd.ratings}<br/>
                     Release Date: ${dvd.releaseDate}<br/>
                     <hr/>
                 </c:forEach>

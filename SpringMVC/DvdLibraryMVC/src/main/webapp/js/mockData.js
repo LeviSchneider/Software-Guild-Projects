@@ -36,22 +36,22 @@ var testDvdData = [{
 
 var dummyDetailsDvd =
         {
-            dvdId: 10,
-            title: "Walking Tall",
-            director: "The Michael Bay that made the Rock",
-            studio: "Disney",
-            ratings: "PG-Fucking-13",
-            releaseDate: "When we fucking feel like it",
-            notes: "FUCK!"
+            dvdId: 13,
+            title: "Transformers",
+            director: "Childhood Ruiner",
+            studio: "Someone Owned",
+            ratings: "U for Unwatchable",
+            releaseDate: "Unfortunately within my lifetime",
+            notes: "Burn after watching"
         };
 
 var dummyEditDvd =
         {
             dvdId: 15,
-            title: "Oreilly Factor",
-            director: "Oreilly",
-            studio: "Fox News",
-            ratings: "U for unwatchable",
-            releaseDate: "Who cares",
-            notes: "We'll do it fucking live!."
+            title: "Transformers",
+            director: "Childhood Ruiner",
+            studio: "Someone Owned",
+            ratings: "U for Unwatchable",
+            releaseDate: "Unfortunately within my lifetime",
+            notes: "Burn after watching"
         };

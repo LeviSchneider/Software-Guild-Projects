@@ -25,44 +25,35 @@ public class DvdLibraryDaoTest {
 
     private final DvdLibraryDao dao;
     private final DVD dvd1;
-    private final ArrayList<String> list1;
-    private final ArrayList<String> list2;
-    private final ArrayList<String> list3;
     private final DVD dvd2;
     private final DVD dvd3;
     
     public DvdLibraryDaoTest() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("test-applicationContext.xml");
         dao = ctx.getBean("dvdLibraryDao", DvdLibraryDao.class);
-        list1 = new ArrayList<>();
-        list2 = new ArrayList<>();
-        list3 = new ArrayList<>();
         
         dvd1 = new DVD();
-        list1.add("Awesome");
-        dvd1.setNotes(list1);
+        dvd1.setNotes("Awesome");
         dvd1.setDirector("Christopher");
         dvd1.setTitle("Prestige");
         dvd1.setStudio("Disney");
-        dvd1.setRating("R");
+        dvd1.setRatings("R");
         dvd1.setReleaseDate("20160329");
         
         dvd2 = new DVD();
-        list2.add("Horrible");
-        dvd2.setNotes(list2);
+        dvd2.setNotes("Horrible");
         dvd2.setDirector("Bay");
         dvd2.setTitle("Transformers");
         dvd2.setStudio("Disney");
-        dvd2.setRating("PG13");
+        dvd2.setRatings("PG13");
         dvd2.setReleaseDate("20081025");
         
         dvd3 = new DVD();
-        list3.add("Okay");
-        dvd3.setNotes(list3);
+        dvd3.setNotes("Horrible");
         dvd3.setDirector("Shyaliman");
         dvd3.setTitle("Signs");
         dvd3.setStudio("Someone Owned By Disney");
-        dvd3.setRating("PG13");
+        dvd3.setRatings("PG13");
         dvd3.setReleaseDate("20101111");
     }
     
