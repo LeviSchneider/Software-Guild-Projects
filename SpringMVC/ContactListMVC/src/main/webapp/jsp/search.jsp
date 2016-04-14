@@ -18,7 +18,6 @@
     <body>
         <div class="container">
             <h1>Company Contacts</h1>
-
             <hr/>
             <div class="navbar">
                 <ul class="nav nav-tabs">

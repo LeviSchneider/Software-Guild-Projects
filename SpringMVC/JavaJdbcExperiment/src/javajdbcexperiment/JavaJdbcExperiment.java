@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsg.addressbookmvc.dao;
+package javajdbcexperiment;
 
 /**
  *
  * @author apprentice
  */
-public enum SearchTerm {
-    STATE, CITY, ADDRESS_LINE_1, ADDRESS_LINE_2, NAME, ZIP_CODE
+public class JavaJdbcExperiment {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+    }
+    
 }

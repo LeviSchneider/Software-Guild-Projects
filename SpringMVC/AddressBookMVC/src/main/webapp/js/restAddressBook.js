@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-
 $(document).ready(function () {
     loadAddresses();
 
@@ -35,6 +34,11 @@ $(document).ready(function () {
             $('#add-state').val('');
             $('#add-zip-code').val('');
             loadAddresses();
+        }).error(function(data, status){
+            $.each(data.responseJSON.fieldErrors, function(index, validationError){
+                var errorDiv = $('#validationErrors');
+                errorDiv.append(validationError.message).append($('<br>'));
+            });
         });
     });
 
@@ -63,17 +67,31 @@ $(document).ready(function () {
     });
 });
 
-function loadAddresses() {
+function loadAddresses(){
     clearAddressTable();
-
-    var aTable = $('#contentRows');
-
-    $.ajax({
-        url: 'addresses'
-    }).success(function (data, status) {
-        fillAddressTable(data, status);
+    
+    var contentRows = $('#contentRows');
+    
+    $.ajax ({
+        type: 'GET',
+        url: 'http://localhost:8080/AddressBookMVC/addresses'
+    }).success(function(data, status){
+       $.each(data, function(index, address){
+           var name = address.name;
+           var company = address.company;
+           var id = address.addressId;
+           
+           var row = '<tr>';
+           row += '<td>' + name + '</td>';
+           row += '<td>' + state + '</td>';
+           row += '<td><a onclick="showEditForm(' + id + ')">Edit</a></td>';
+           row += '<td><a onclick="deleteAddress(' + id + ')">Delete</a></td>';
+           row += '</td>';
+           contentRows.append(row);
+       });
     });
-}
+};
+
 
 function clearAddressTable()
 {
@@ -118,88 +136,16 @@ $('#editModal').on('show.bs.modal', function (event) {
     });
 });
 
-function deleteAddress(id) {
+function deleteAddress(id){
     var answer = confirm("Do you really want to delete this contact?");
-
-    if (answer === true)
+    
+    if(answer === true)
     {
         $.ajax({
             type: 'DELETE',
             url: 'address/' + id
-        }).success(function () {
+        }).success(function(){
             loadAddresses();
         });
     }
 }
-
-function fillAddressTable(addressBook, status) {
-    clearAddressTable();
-
-    var aTable = $('#contentRows');
-
-    $.each(addressBook, function (index, address) {
-        aTable.append($('<tr>')
-                .append($('<td>')
-                        .append($('<a>')
-                                .attr({
-                                    'data-address-id': address.addressId,
-                                    'data-toggle': 'Modal',
-                                    'data-target': '#detailsModal'
-                                })
-                                .text(address.name)
-                                )
-                        )
-                .append($('<td>').text(address.state))
-                .append($('<td>')
-                        .append($('<a>')
-                                .attr({
-                                    'data-address-id': address.addressId,
-                                    'data-toggle': 'modal',
-                                    'data-target': '#editModal'
-                                })
-                                .text('Edit')
-                                )
-                        )
-                .append($('<td>')
-                        .append($('<a>')
-                                .attr({
-                                    'onClick': 'deleteAddress(' + address.addressId + ')'
-                                })
-                                .text('Delete')
-                                )
-                        )
-                );
-    });
-
-}
-
-$('#search-button').click(function (event) {
-    event.preventDefault();
-
-    $.ajax({
-        type: 'POST',
-        url: 'search/addresses',
-        data: JSON.stringify({
-            name: $('#search-name').val(),
-            addressLine1: $('#search-address-line-1').val(),
-            addressLine2: $('#search-address-line-2').val(),
-            city: $('#search-city').val(),
-            state: $('#search-state').val(),
-            zipCode: $('#search-zip-code').val()
-        }),
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        'dataType': 'json'
-    }).success(function (data, status) {
-        $('#search-name').val('');
-        $('#search-address-line-1').val('');
-        $('#search-address-line-2').val('');
-        $('#search-city').val('');
-        $('#search-state').val('');
-        $('#search-zip-code').val('');
-
-        fillAddressTable(data, status);
-    });
-});

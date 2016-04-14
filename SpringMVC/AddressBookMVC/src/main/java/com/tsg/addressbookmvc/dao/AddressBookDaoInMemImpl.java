@@ -57,8 +57,8 @@ public class AddressBookDaoInMemImpl implements AddressBookDao{
         String nameCriteria = criteria.get(SearchTerm.NAME);
         String stateCriteria = criteria.get(SearchTerm.STATE);
         String cityCriteria = criteria.get(SearchTerm.CITY);
-        String addressLine1Criteria = criteria.get(SearchTerm.ADDRESS_LINE1);
-        String addressLine2Criteria = criteria.get(SearchTerm.ADDRESS_LINE2);
+        String addressLine1Criteria = criteria.get(SearchTerm.ADDRESS_LINE_1);
+        String addressLine2Criteria = criteria.get(SearchTerm.ADDRESS_LINE_2);
         String zipCodeCriteria = criteria.get(SearchTerm.ZIP_CODE);
         
         Predicate<Address> nameMatches;

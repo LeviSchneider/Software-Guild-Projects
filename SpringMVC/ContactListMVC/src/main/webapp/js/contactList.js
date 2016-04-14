@@ -143,7 +143,7 @@ function fillContactTable(contactList, status) {
                         .append($('<a>')
                                 .attr({
                                     'data-contact-id': contact.contactId,
-                                    'data-toggle': 'nodal',
+                                    'data-toggle': 'Modal',
                                     'data-target': '#detailsModal'
                                 })
                                 .text(contact.firstName + ' ' + contact.lastName)
