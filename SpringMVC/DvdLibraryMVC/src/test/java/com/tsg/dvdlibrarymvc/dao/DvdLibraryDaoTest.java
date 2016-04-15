@@ -6,7 +6,6 @@
 package com.tsg.dvdlibrarymvc.dao;
 
 import com.tsg.dvdlibrarymvc.dto.DVD;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
@@ -31,6 +31,9 @@ public class DvdLibraryDaoTest {
     public DvdLibraryDaoTest() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("test-applicationContext.xml");
         dao = ctx.getBean("dvdLibraryDao", DvdLibraryDao.class);
+        
+        JdbcTemplate cleaner = (JdbcTemplate) ctx.getBean("jdbcTemplate");
+        cleaner.execute("delete from dvd");
         
         dvd1 = new DVD();
         dvd1.setNotes("Awesome");
@@ -124,7 +127,7 @@ public class DvdLibraryDaoTest {
         Assert.assertEquals(1, dList.size());
         Assert.assertEquals(dvd2, dList.get(0));
         
-        criteria.put(SearchTerm.RATING, "PG13");
+        criteria.put(SearchTerm.RATINGS, "PG13");
         dList = dao.searchDVDs(criteria);
         Assert.assertEquals(1, dList.size());
         Assert.assertEquals(dvd2, dList.get(0));

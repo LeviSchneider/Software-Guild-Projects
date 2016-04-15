@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.tsg_ContactListMVC_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.tsg.contactlistmvc.dao.User</class>
+    <class>com.tsg.contactlistmvc.dao.HelpKeyword</class>
+    <class>com.tsg.contactlistmvc.dao.TimeZoneTransition</class>
+    <class>com.tsg.contactlistmvc.dao.TimeZoneTransitionType</class>
+    <class>com.tsg.contactlistmvc.dao.Plugin</class>
+    <class>com.tsg.contactlistmvc.dao.ProxiesPriv</class>
+    <class>com.tsg.contactlistmvc.dao.Proc</class>
+    <class>com.tsg.contactlistmvc.dao.Host</class>
+    <class>com.tsg.contactlistmvc.dao.HelpCategory</class>
+    <class>com.tsg.contactlistmvc.dao.HelpRelation</class>
+    <class>com.tsg.contactlistmvc.dao.TimeZoneName</class>
+    <class>com.tsg.contactlistmvc.dao.ColumnsPriv</class>
+    <class>com.tsg.contactlistmvc.dao.NdbBinlogIndex</class>
+    <class>com.tsg.contactlistmvc.dao.Db</class>
+    <class>com.tsg.contactlistmvc.dao.TablesPriv</class>
+    <class>com.tsg.contactlistmvc.dao.Servers</class>
+    <class>com.tsg.contactlistmvc.dao.TimeZoneLeapSecond</class>
+    <class>com.tsg.contactlistmvc.dao.HelpTopic</class>
+    <class>com.tsg.contactlistmvc.dao.Func</class>
+    <class>com.tsg.contactlistmvc.dao.ProcsPriv</class>
+    <class>com.tsg.contactlistmvc.dao.TimeZone</class>
+    <class>com.tsg.contactlistmvc.dao.Event</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+    </properties>
+  </persistence-unit>
+</persistence>

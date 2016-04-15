@@ -10,5 +10,5 @@ package com.tsg.dvdlibrarymvc.dao;
  * @author apprentice
  */
 public enum SearchTerm {
-    TITLE, DIRECTOR, STUDIO, RATING, RELEASE_DATE
+    TITLE, DIRECTOR, STUDIO, RATINGS, RELEASE_DATE, NOTES
 }

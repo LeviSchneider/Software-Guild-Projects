@@ -58,13 +58,15 @@ public class DvdLibraryDaoInMemImpl implements DvdLibraryDao{
         String directorCriteria = criteria.get(SearchTerm.DIRECTOR);
         String studioCriteria = criteria.get(SearchTerm.STUDIO);
         String releaseDateCriteria = criteria.get(SearchTerm.RELEASE_DATE);
-        String ratingCriteria = criteria.get(SearchTerm.RATING);
+        String ratingCriteria = criteria.get(SearchTerm.RATINGS);
+        String notesCriteria = criteria.get(SearchTerm.NOTES);
         
         Predicate<DVD> titleMatches;
         Predicate<DVD> directorMatches;
         Predicate<DVD> studioMatches;
         Predicate<DVD> releaseDateMatches;
         Predicate<DVD> ratingMatches;
+        Predicate<DVD> notesMatches;
         
         Predicate<DVD> truePredicate = (c) -> {return true;};
         
@@ -73,13 +75,15 @@ public class DvdLibraryDaoInMemImpl implements DvdLibraryDao{
         studioMatches = (studioCriteria == null || studioCriteria.isEmpty())? truePredicate: (c) -> c.getStudio().equals(studioCriteria);
         releaseDateMatches = (releaseDateCriteria == null || releaseDateCriteria.isEmpty())? truePredicate: (c) -> c.getReleaseDate().equals(releaseDateCriteria);
         ratingMatches = (ratingCriteria == null || ratingCriteria.isEmpty())? truePredicate:(c) -> c.getRatings().equals(ratingCriteria); 
+        notesMatches = (notesCriteria == null || notesCriteria.isEmpty())? truePredicate:(c) -> c.getNotes().equals(ratingCriteria); 
         
         return dvdMap.values().stream()
                 .filter(titleMatches
                     .and(directorMatches)
                     .and(studioMatches)
                     .and(releaseDateMatches)
-                    .and(ratingMatches))
+                    .and(ratingMatches)
+                    .and(notesMatches))
                 .collect(Collectors.toList());
     }
 }
